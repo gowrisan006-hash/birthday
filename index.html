@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday wishes! 🎉</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-container" id="particles"></div>
+
+    <div id="splashScreen" class="splash-screen">
+        <h1 class="logo-hello">Hello</h1>
+    </div>
+
+    <section class="hero" id="mainHero" style="display: none; opacity: 0; transition: opacity 1.5s ease;">
+        <h1 id="headline">Happy Birthday pavikutty 💕!</h1>
+        <button class="btn-celebrate" id="celebrateBtn">Click to Celebrate! ✨</button>
+    </section>
+
+    <script src="script.js"></script>
+    <script>
+        // Splash screen logic
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const splash = document.getElementById('splashScreen');
+                const main = document.getElementById('mainHero');
+                
+                splash.style.opacity = '0';
+                splash.style.transition = 'opacity 1s ease';
+                
+                setTimeout(() => {
+                    splash.style.display = 'none';
+                    main.style.display = 'flex';
+                    // Trigger reflow for transition
+                    main.offsetHeight; 
+                    main.style.opacity = '1';
+                }, 1000);
+            }, 3000); // Wait 3 seconds
+        });
+
+        document.getElementById('celebrateBtn').addEventListener('click', () => {
+            document.body.style.opacity = '0';
+            document.body.style.transition = 'opacity 0.8s';
+            setTimeout(() => {
+                window.location.href = 'celebration.html';
+            }, 800);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Celebration ✨</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="floating-container" id="particles"></div>
+
+    <main class="content-wrapper">
+        <div class="wishes-card">
+            <h2 id="wishesHeadline">Happy Birthday to You!</h2>
+            <div class="typing-text" id="wishesText"></div>
+            <button class="btn-celebrate memory-btn" id="memoryBtn" style="margin-top: 2rem; display: none;">Go to pic📸</button>
+        </div>
+
+        <div class="slider-container" id="memorySlider" style="display: none; opacity: 0;">
+            <div class="slides" id="slides">
+                <div class="slide"><img src="C:\Users\GOWRISAN B\OneDrive\Pictures\Screenshots\IMG-20250416-WA0010 (1).jpg" alt="Birthday Image 1"></div>
+                <div class="slide"><img src="C:\Users\GOWRISAN B\OneDrive\Pictures\Screenshots\IMG-20250416-WA0015 (1).jpg" alt="Birthday Image 2"></div>
+                <div class="slide"><img src="C:\Users\GOWRISAN B\OneDrive\Pictures\Screenshots\IMG-20250416-WA0005 (1).jpg" alt="Birthday Image 3"></div>
+                <div class="slide"><img src="C:\Users\GOWRISAN B\OneDrive\Pictures\Screenshots\IMG-20250416-WA0009 (1).jpg" alt="Birthday Image 4"></div>
+            </div>
+            
+            <button class="slider-btn btn-prev" id="prevBtn">❮</button>
+            <button class="slider-btn btn-next" id="nextBtn">❯</button>
+
+            <div class="dots" id="dotsContainer"></div>
+        </div>
+    </main>
+
+    <div class="music-toggle" id="musicToggle">
+        <span id="musicIcon">🎵</span>
+    </div>
+
+    <!-- Background Music (Optional, simple synth if no file) -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="C:\Users\GOWRISAN B\Music\Happy Birthday BGM Video Editing Alight Motion Kannada Instagram Trending Reels(MP3_160K).mp3" type="audio/mpeg">
+    </audio>
+
+
+    <script src="script.js"></script>
+    <script>
+        // Init typing effect for this page
+        const text = "Wishing you a day filled with happiness and a year filled with joy. You deserve all the cakes, love, and happiness today. May all your dreams come true and may you always stay as amazing as you are.And your are my favorite person my thangachi💕";
+        
+        typeWriter(text, 'wishesText', 50, () => {
+            const memoryBtn = document.getElementById('memoryBtn');
+            if (memoryBtn) {
+                memoryBtn.style.display = 'block';
+                memoryBtn.style.animation = 'fadeInUp 1s ease-out';
+            }
+        });
+        
+        // Init Memory Reveal logic
+        initMemoryReveal();
+    </script>
+</body>
+</html>
